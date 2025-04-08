@@ -3,7 +3,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 
-public class RandomWord {
+public class WordGenerator {
+
     public String getRandomWord() {
         int NUMBER_OF_LINES = searchNumberOfLines();
         Random random = new Random();

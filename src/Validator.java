@@ -1,4 +1,7 @@
-public class VerificationMethods {
+import java.util.HashSet;
+import java.util.Set;
+
+public class Validator {
     public int checkChanges (String word, String oldWord, String newWord) {
         if (newWord.equals(word)) {
             return 10000;
@@ -9,8 +12,9 @@ public class VerificationMethods {
         }
     }
 
-    public String searchLetter(String word, String maskWord, char symbol) {
+    public String searchLetterAndGetItMask (String word, String maskWord, char symbol) {
         char[] words = word.toCharArray();
+
         for (int i = 0; i < word.length(); i++) {
             if (words[i] == symbol) {
                 char[] maskWordChars = maskWord.toCharArray();
@@ -18,11 +22,12 @@ public class VerificationMethods {
                 maskWord = String.valueOf(maskWordChars);
             }
         }
+
         System.out.println(maskWord);
         return maskWord;
     }
 
-    public String makeMaskFromWord(String word) {
+    public String getMaskFromWord(String word) {
         StringBuilder maskWord = new StringBuilder();
         for (int i = 0; i < word.length(); i++) {
             maskWord.append("*");
